@@ -6,3 +6,4 @@ streamlit-option-menu
 unidecode
 geopandas
 leaflet
+folium
