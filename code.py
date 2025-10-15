@@ -22,15 +22,19 @@ import streamlit.components.v1 as components
 # ================== CONFIG (solo una vez y lo 1º) ==================
 st.set_page_config(
     page_title="Dashboard Educación – Costa Rica 2026",
-    page_icon="/share/home/ruts/visualizacion/logos/circle-white.svg",
+    page_icon="circle-white.svg",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
 
 # ================== RUTAS ==================
-CSV_PATH = r"/share/home/ruts/notebooks/costa-rica/eduacion/nivel-eduacion-region-sexo-edad.csv"
-CENTROS_GEOJSON_PATH = r"/share/home/ruts/notebooks/costa-rica/eduacion/centros-educativos-CR.geojson"  # puntos
-REGIONES_SHP_PATH = r"/share/home/ruts/notebooks/costa-rica/geometry/Unidad Geoestadística Regional 2024.shp"  # polígonos
+CSV_PATH = r"nivel-eduacion-region-sexo-edad.csv"
+CENTROS_GEOJSON_PATH = r"centros-educativos-CR.geojson"  # puntos
+REGIONES_SHP_PATH = r"Unidad Geoestadística Regional 2024.shp"  # polígonos
+LOGO_PATH = "circle-white.svg"
+CSV_SERIES_PATH = "educacion-cr-1990-2023.csv"  # <- cámbiala
+
+
 
 # ================== ESTILOS ==================
 st.markdown("""
@@ -211,7 +215,6 @@ sexos     = sorted(df_long[COL_SEXO].dropna().astype(str).unique().tolist())
 edades    = sorted(df_long[COL_EDAD].dropna().astype(str).unique().tolist())
 
 # ================== CABECERA ==================
-LOGO_PATH = "/share/www/projects/js-dir/img/logos/svg/circle-white.svg"
 logo_data_uri = img_to_data_uri(LOGO_PATH)
 st.markdown(
     f"""
@@ -608,7 +611,6 @@ with row1_col2:
     with st.container(border=True):
         st.markdown("**Evolución temporal**")
         # --- Ruta y carga del CSV de series temporales ---
-        CSV_SERIES_PATH = "/share/home/ruts/visualizacion/eduacion-cr/educacion-cr-1990-2023.csv"  # <- cámbiala
         @st.cache_data(show_spinner=False)
         def load_series(path: str) -> pd.DataFrame:
             df = pd.read_csv(path)
