@@ -53,7 +53,7 @@ html, body, [data-testid="stAppViewContainer"] {
 /* ===== Cabecera (logo + título) ===== */
 .header-box { padding: 0 0 0 0; }
 .header-row { display:flex; align-items:center; gap:1vh; }
-.header-row h1 { margin:0; font-size:4vh ; font-weight:500; color:#fff;}
+.header-row h1 { margin:0; font-size:2rem ; font-weight:400; color:#fff;}
 .header-row img { height:5vh; width:auto; }
 
 /* Sin márgenes arriba */
