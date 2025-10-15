@@ -31,7 +31,7 @@ st.set_page_config(
 CSV_PATH = r"nivel-eduacion-region-sexo-edad.csv"
 CENTROS_GEOJSON_PATH = r"centros-educativos-CR.geojson"  # puntos
 REGIONES_SHP_PATH = r"Unidad Geoestadística Regional 2024.shp"  # polígonos
-LOGO_PATH = "circle-white.svg"
+LOGO_PATH = "TDP_Logo_White.svg"
 CSV_SERIES_PATH = "educacion-cr-1990-2023.csv"  # <- cámbiala
 
 
